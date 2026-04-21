@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 import heroHands from "@/assets/hero-hands.jpg";
 import impactField from "@/assets/impact-field.jpg";
 import vizStewardship from "@/assets/viz-stewardship.jpg";
-import vizCrm from "@/assets/viz-crm-workflow.jpg";
+
 import vizAnalytics from "@/assets/viz-analytics.jpg";
 
 
