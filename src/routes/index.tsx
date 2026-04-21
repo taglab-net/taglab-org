@@ -121,20 +121,6 @@ function Landing() {
         </div>
       </section>
 
-      {/* MARQUEE / TRUST */}
-      <section className="border-y border-border bg-secondary/40">
-        <div className="max-w-7xl mx-auto px-6 lg:px-10 py-8 flex flex-wrap items-center justify-between gap-6 text-sm text-muted-foreground">
-          <span className="uppercase tracking-[0.2em] text-xs">Trusted by teams who care</span>
-          <div className="flex flex-wrap gap-x-10 gap-y-2 font-display text-lg">
-            <span>Harbor Foundation</span>
-            <span>Rootwell</span>
-            <span>Meadow Fund</span>
-            <span>Commonlight</span>
-            <span>Vestige.org</span>
-          </div>
-        </div>
-      </section>
-
       {/* SERVICES */}
       <section id="services" className="py-24 lg:py-32">
         <div className="max-w-7xl mx-auto px-6 lg:px-10">
