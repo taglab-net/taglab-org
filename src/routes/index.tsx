@@ -1,8 +1,11 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { motion } from "framer-motion";
 import heroHands from "@/assets/hero-hands.jpg";
-import donorLetter from "@/assets/donor-letter.jpg";
 import impactField from "@/assets/impact-field.jpg";
+import vizStewardship from "@/assets/viz-stewardship.jpg";
+import vizCrm from "@/assets/viz-crm-workflow.jpg";
+import vizAnalytics from "@/assets/viz-analytics.jpg";
+import vizImpactReport from "@/assets/viz-impact-report.jpg";
 
 export const Route = createFileRoute("/")({
   component: Landing,
