@@ -1,26 +1,322 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { motion } from "framer-motion";
+import heroHands from "@/assets/hero-hands.jpg";
+import donorLetter from "@/assets/donor-letter.jpg";
+import impactField from "@/assets/impact-field.jpg";
 
 export const Route = createFileRoute("/")({
-  component: Index,
+  component: Landing,
 });
 
-// IMPORTANT: Replace this placeholder. For sites with multiple pages (About, Services, Contact, etc.),
-// create separate route files (about.tsx, services.tsx, contact.tsx) — don't put all pages in this file.
-function PlaceholderIndex() {
+const services = [
+  { n: "01", t: "Donor Communication", d: "Thank-yous, appeals, and stewardship emails that sound like a human wrote them — because one did." },
+  { n: "02", t: "Donor Journey Design", d: "Map the path from first gift to lifetime champion. We design every touchpoint in between." },
+  { n: "03", t: "Content & Updates", d: "Monthly storytelling, newsletters, and social content that keeps your mission top of mind." },
+  { n: "04", t: "CRM & Segmentation", d: "Clean your data, build segments, and send the right message to the right donor at the right moment." },
+  { n: "05", t: "Analytics & Attribution", d: "See what's working. Retention, LTV, channel ROI — the numbers that actually move giving." },
+  { n: "06", t: "Campaigns", d: "End-of-year, matching gift, giving days. Strategy, creative, and execution under one roof." },
+  { n: "07", t: "Donor Portfolio", d: "Major gift prospect research, moves management, and briefing docs for your development team." },
+  { n: "08", t: "Outreach & Engagement", d: "Ambassador programs, peer-to-peer, and community building that turns donors into advocates." },
+  { n: "09", t: "Impact Updates", d: "Quarterly impact reports and field stories that prove every dollar moved the needle." },
+];
+
+function Landing() {
   return (
-    <div
-      className="flex min-h-screen items-center justify-center"
-      style={{ backgroundColor: "#fcfbf8" }}
-    >
-      <img
-        data-lovable-blank-page-placeholder="REMOVE_THIS"
-        src="https://cdn.gpteng.co/blank-app-v1.svg"
-        alt="Your app will live here!"
-      />
+    <div className="min-h-screen bg-background text-foreground">
+      {/* NAV */}
+      <header className="sticky top-0 z-50 backdrop-blur-md bg-background/80 border-b border-border/60">
+        <nav className="max-w-7xl mx-auto px-6 lg:px-10 h-16 flex items-center justify-between">
+          <a href="#top" className="flex items-center gap-2 font-display text-xl font-semibold tracking-tight">
+            <span className="inline-block w-2 h-2 rounded-full bg-accent" />
+            taglab<span className="text-primary">studio</span>
+          </a>
+          <div className="hidden md:flex items-center gap-8 text-sm text-muted-foreground">
+            <a href="#services" className="hover:text-foreground transition">Services</a>
+            <a href="#approach" className="hover:text-foreground transition">Approach</a>
+            <a href="#impact" className="hover:text-foreground transition">Impact</a>
+            <a href="#contact" className="hover:text-foreground transition">Contact</a>
+          </div>
+          <a href="#contact" className="inline-flex items-center gap-2 rounded-full bg-primary text-primary-foreground px-5 py-2 text-sm font-medium hover:bg-primary/90 transition shadow-soft">
+            Start a conversation
+          </a>
+        </nav>
+      </header>
+
+      {/* HERO */}
+      <section id="top" className="relative overflow-hidden">
+        <div className="max-w-7xl mx-auto px-6 lg:px-10 pt-16 lg:pt-24 pb-20 lg:pb-32 grid lg:grid-cols-12 gap-10 items-center">
+          <motion.div
+            initial={{ opacity: 0, y: 24 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
+            className="lg:col-span-7"
+          >
+            <div className="inline-flex items-center gap-2 text-xs uppercase tracking-[0.22em] text-muted-foreground mb-6">
+              <span className="w-8 h-px bg-accent" />
+              A digital studio for nonprofits
+            </div>
+            <h1 className="font-display text-5xl md:text-6xl lg:text-7xl leading-[0.98] text-balance">
+              Donors don't give to <em className="italic text-accent">organizations.</em>
+              <br />
+              They give to <span className="text-primary">people they trust.</span>
+            </h1>
+            <p className="mt-8 text-lg md:text-xl text-muted-foreground max-w-xl leading-relaxed">
+              Taglab Studio helps mission-driven teams build donor relationships that last —
+              through thoughtful communication, clean CRM, and stories that prove impact.
+            </p>
+            <div className="mt-10 flex flex-wrap items-center gap-4">
+              <a href="#contact" className="inline-flex items-center gap-2 rounded-full bg-primary text-primary-foreground px-7 py-3.5 font-medium hover:bg-primary/90 transition shadow-lift">
+                Book a discovery call
+                <span aria-hidden>→</span>
+              </a>
+              <a href="#services" className="inline-flex items-center gap-2 rounded-full border border-border px-7 py-3.5 font-medium hover:bg-secondary transition">
+                See what we do
+              </a>
+            </div>
+            <div className="mt-12 grid grid-cols-3 gap-6 max-w-md">
+              {[
+                { k: "62%", v: "avg. donor retention lift" },
+                { k: "3.4×", v: "email revenue growth" },
+                { k: "40+", v: "nonprofits served" },
+              ].map((s) => (
+                <div key={s.k}>
+                  <div className="font-display text-3xl text-primary">{s.k}</div>
+                  <div className="text-xs text-muted-foreground mt-1 leading-snug">{s.v}</div>
+                </div>
+              ))}
+            </div>
+          </motion.div>
+
+          <motion.div
+            initial={{ opacity: 0, scale: 0.96 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 1, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
+            className="lg:col-span-5 relative"
+          >
+            <div className="relative rounded-2xl overflow-hidden shadow-lift">
+              <img
+                src={heroHands}
+                alt="Hands joined together in a community gathering at golden hour"
+                width={1600}
+                height={1200}
+                className="w-full h-[520px] object-cover"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-primary/30 to-transparent" />
+            </div>
+            <div className="absolute -bottom-6 -left-6 bg-card rounded-xl p-5 shadow-lift max-w-[240px] border border-border hidden md:block">
+              <div className="text-xs uppercase tracking-wider text-muted-foreground mb-1">This quarter</div>
+              <div className="font-display text-2xl">$1.2M raised</div>
+              <div className="text-sm text-muted-foreground mt-1">across 12 campaigns we ran with partners</div>
+            </div>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* MARQUEE / TRUST */}
+      <section className="border-y border-border bg-secondary/40">
+        <div className="max-w-7xl mx-auto px-6 lg:px-10 py-8 flex flex-wrap items-center justify-between gap-6 text-sm text-muted-foreground">
+          <span className="uppercase tracking-[0.2em] text-xs">Trusted by teams who care</span>
+          <div className="flex flex-wrap gap-x-10 gap-y-2 font-display text-lg">
+            <span>Harbor Foundation</span>
+            <span>Rootwell</span>
+            <span>Meadow Fund</span>
+            <span>Commonlight</span>
+            <span>Vestige.org</span>
+          </div>
+        </div>
+      </section>
+
+      {/* SERVICES */}
+      <section id="services" className="py-24 lg:py-32">
+        <div className="max-w-7xl mx-auto px-6 lg:px-10">
+          <div className="grid lg:grid-cols-12 gap-10 mb-16">
+            <div className="lg:col-span-5">
+              <div className="text-xs uppercase tracking-[0.22em] text-accent mb-4">What we do</div>
+              <h2 className="font-display text-4xl md:text-5xl leading-[1.05] text-balance">
+                The full donor lifecycle, handled with care.
+              </h2>
+            </div>
+            <div className="lg:col-span-6 lg:col-start-7 text-lg text-muted-foreground leading-relaxed flex items-end">
+              From the first touchpoint to the tenth-year anniversary gift, we design systems
+              and stories that keep your donors close — and your team sane.
+            </div>
+          </div>
+
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-px bg-border rounded-2xl overflow-hidden border border-border">
+            {services.map((s, i) => (
+              <motion.div
+                key={s.n}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: "-60px" }}
+                transition={{ duration: 0.5, delay: (i % 3) * 0.08 }}
+                className="bg-card p-8 lg:p-10 group hover:bg-secondary/60 transition-colors"
+              >
+                <div className="font-display text-sm text-accent mb-6 tracking-widest">{s.n}</div>
+                <h3 className="font-display text-2xl mb-3">{s.t}</h3>
+                <p className="text-muted-foreground leading-relaxed">{s.d}</p>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* APPROACH — split editorial */}
+      <section id="approach" className="bg-primary text-primary-foreground py-24 lg:py-32">
+        <div className="max-w-7xl mx-auto px-6 lg:px-10 grid lg:grid-cols-12 gap-12 items-center">
+          <div className="lg:col-span-5 order-2 lg:order-1">
+            <img
+              src={donorLetter}
+              alt="Donor smiling as she reads a handwritten thank-you letter by a window"
+              width={1200}
+              height={1400}
+              loading="lazy"
+              className="w-full rounded-2xl object-cover h-[560px] shadow-lift"
+            />
+          </div>
+          <div className="lg:col-span-6 lg:col-start-7 order-1 lg:order-2">
+            <div className="text-xs uppercase tracking-[0.22em] text-accent mb-4">Our approach</div>
+            <h2 className="font-display text-4xl md:text-5xl leading-[1.05] mb-8 text-balance">
+              We treat every donor like the person they are.
+            </h2>
+            <div className="space-y-6 text-primary-foreground/85 text-lg leading-relaxed">
+              <p>
+                Most nonprofit marketing reads like a bank statement. We think that's a missed
+                opportunity. Your donors gave because they believed. Our job is to keep that
+                belief warm.
+              </p>
+              <p>
+                We work embedded with your team — as strategists, writers, and operators —
+                building the systems that let you show up consistently for the people funding
+                your mission.
+              </p>
+            </div>
+            <ul className="mt-10 space-y-4">
+              {[
+                "Monthly strategy + weekly execution",
+                "Your CRM, your data, your donors — we just make it sing",
+                "Transparent reporting, no jargon, no inflated dashboards",
+              ].map((b) => (
+                <li key={b} className="flex gap-3 items-start">
+                  <span className="mt-2 w-1.5 h-1.5 rounded-full bg-accent shrink-0" />
+                  <span>{b}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      {/* IMPACT */}
+      <section id="impact" className="py-24 lg:py-32">
+        <div className="max-w-7xl mx-auto px-6 lg:px-10">
+          <div className="grid lg:grid-cols-12 gap-10 mb-16">
+            <div className="lg:col-span-6">
+              <div className="text-xs uppercase tracking-[0.22em] text-accent mb-4">Impact</div>
+              <h2 className="font-display text-4xl md:text-5xl leading-[1.05] text-balance">
+                Stories we've helped tell.
+              </h2>
+            </div>
+          </div>
+
+          <div className="grid lg:grid-cols-2 gap-8">
+            <motion.article
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6 }}
+              className="bg-card rounded-2xl overflow-hidden border border-border shadow-soft"
+            >
+              <img
+                src={impactField}
+                alt="Volunteer handing a care package to a young person in the community"
+                width={1200}
+                height={1400}
+                loading="lazy"
+                className="w-full h-72 object-cover"
+              />
+              <div className="p-8 lg:p-10">
+                <div className="text-xs uppercase tracking-widest text-accent mb-3">Rootwell Foundation</div>
+                <h3 className="font-display text-2xl mb-3">Rebuilding a lapsed donor program</h3>
+                <p className="text-muted-foreground leading-relaxed">
+                  Segmented 18,000 dormant donors, rewrote the reactivation journey, and
+                  recovered <span className="text-foreground font-medium">$340k</span> in
+                  12 months.
+                </p>
+              </div>
+            </motion.article>
+
+            <motion.article
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: 0.1 }}
+              className="bg-gradient-hero text-primary-foreground rounded-2xl p-10 lg:p-12 flex flex-col justify-between min-h-[440px] shadow-lift"
+            >
+              <div>
+                <div className="text-xs uppercase tracking-widest text-accent mb-3">Meadow Fund</div>
+                <h3 className="font-display text-3xl lg:text-4xl mb-4 text-balance">
+                  "Our end-of-year campaign tripled. But the real win? Donors told us they
+                  finally felt seen."
+                </h3>
+              </div>
+              <div>
+                <div className="h-px bg-primary-foreground/20 mb-4" />
+                <div className="text-sm text-primary-foreground/80">
+                  — Amara Okafor, Director of Development
+                </div>
+              </div>
+            </motion.article>
+          </div>
+        </div>
+      </section>
+
+      {/* CTA */}
+      <section id="contact" className="py-24 lg:py-32 bg-gradient-warm">
+        <div className="max-w-4xl mx-auto px-6 lg:px-10 text-center">
+          <div className="text-xs uppercase tracking-[0.22em] text-accent mb-5">Let's talk</div>
+          <h2 className="font-display text-5xl md:text-6xl leading-[1.02] mb-8 text-balance">
+            Your mission deserves a marketing partner who <em className="italic text-accent">actually gets it.</em>
+          </h2>
+          <p className="text-lg md:text-xl text-muted-foreground mb-10 max-w-2xl mx-auto leading-relaxed">
+            Book a 30-minute discovery call. No pitch deck, no pressure — just a real
+            conversation about your donors and what's next.
+          </p>
+          <div className="flex flex-wrap justify-center gap-4">
+            <a
+              href="mailto:hello@taglabstudio.org"
+              className="inline-flex items-center gap-2 rounded-full bg-primary text-primary-foreground px-8 py-4 font-medium hover:bg-primary/90 transition shadow-lift"
+            >
+              hello@taglabstudio.org
+              <span aria-hidden>→</span>
+            </a>
+            <a
+              href="#services"
+              className="inline-flex items-center gap-2 rounded-full border border-border bg-card px-8 py-4 font-medium hover:bg-secondary transition"
+            >
+              Browse services
+            </a>
+          </div>
+        </div>
+      </section>
+
+      {/* FOOTER */}
+      <footer className="border-t border-border bg-card">
+        <div className="max-w-7xl mx-auto px-6 lg:px-10 py-12 flex flex-col md:flex-row gap-6 items-start md:items-center justify-between">
+          <div>
+            <div className="font-display text-xl font-semibold flex items-center gap-2">
+              <span className="inline-block w-2 h-2 rounded-full bg-accent" />
+              taglab<span className="text-primary">studio</span>
+            </div>
+            <div className="text-sm text-muted-foreground mt-2">
+              Digital marketing, built for nonprofits.
+            </div>
+          </div>
+          <div className="text-sm text-muted-foreground">
+            © {new Date().getFullYear()} Taglab Studio · taglabstudio.org
+          </div>
+        </div>
+      </footer>
     </div>
   );
-}
-
-function Index() {
-  return <PlaceholderIndex />;
 }
