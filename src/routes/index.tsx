@@ -22,6 +22,10 @@ const services = [
   { n: "07", t: "Donor Portfolio", d: "Major gift prospect research, moves management, and briefing docs for your development team." },
   { n: "08", t: "Outreach & Engagement", d: "Ambassador programs, peer-to-peer, and community building that turns donors into advocates." },
   { n: "09", t: "Impact Updates", d: "Quarterly impact reports and field stories that prove every dollar moved the needle." },
+  { n: "10", t: "Major Donor Cold Outreach", d: "Researched, personalized first-touch sequences that open doors with new high-value prospects — without sounding like a pitch deck." },
+  { n: "11", t: "SEO & Discovery", d: "Get found by the people already searching for your cause. Technical SEO, content, and authority building tuned for nonprofit growth." },
+  { n: "12", t: "Digital Advertising", d: "Paid search, social, and Google Ad Grants — engineered to lower donor acquisition cost and lift average gift value." },
+  { n: "13", t: "Website & Platform Build", d: "Fundraising sites, beneficiary portals, volunteer circles, HR & recruiting flows, event ticketing — designed, shipped, and maintained." },
 ];
 
 function Landing() {
