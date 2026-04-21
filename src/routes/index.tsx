@@ -570,7 +570,7 @@ function Landing() {
                   <div className="font-display text-lg leading-tight mt-1">Connected stack</div>
                 </div>
                 <div className="flex items-center gap-1.5 text-[10px] text-muted-foreground">
-                  <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse" />
+                  <span className="w-1.5 h-1.5 rounded-full bg-accent animate-pulse" />
                   Live sync
                 </div>
               </div>
