@@ -190,15 +190,72 @@ function Landing() {
               transition={{ duration: 0.6 }}
               className="bg-card rounded-2xl overflow-hidden border border-border shadow-soft group"
             >
-              <div className="aspect-[4/3] overflow-hidden bg-primary/5">
-                <img
-                  src={vizCrm}
-                  alt="Flat illustration of a CRM workflow: connected journey nodes flowing into a stylized email template"
-                  width={1280}
-                  height={960}
-                  loading="lazy"
-                  className="w-full h-full object-cover group-hover:scale-[1.02] transition-transform duration-700"
-                />
+              <div className="aspect-[4/3] bg-primary p-5 lg:p-6 flex flex-col relative overflow-hidden">
+                <div className="absolute -top-10 -right-10 w-32 h-32 rounded-full bg-accent/20 blur-2xl" aria-hidden />
+
+                {/* Workflow title bar */}
+                <div className="relative flex items-center justify-between mb-3">
+                  <div className="text-[9px] uppercase tracking-[0.2em] text-accent font-semibold">Workflow</div>
+                  <div className="text-[10px] text-primary-foreground/80 font-display italic">
+                    New Major Donor Onboarding
+                  </div>
+                </div>
+
+                {/* Steps row */}
+                <div className="relative flex items-stretch gap-0 mb-3">
+                  {[
+                    { n: "1", t: "Gift ≥ $1k", sub: "Trigger" },
+                    { n: "2", t: "Wait 1 day", sub: "Delay" },
+                    { n: "3", t: "Send email", sub: "Action" },
+                  ].map((s, i) => (
+                    <div key={s.n} className="flex items-center flex-1">
+                      <div className="flex-1 bg-background/95 rounded-md px-2 py-2 shadow-soft border border-border/40">
+                        <div className="flex items-center gap-1 mb-0.5">
+                          <span className="w-3.5 h-3.5 rounded-full bg-accent text-accent-foreground text-[8px] font-bold flex items-center justify-center">
+                            {s.n}
+                          </span>
+                          <span className="text-[7px] uppercase tracking-wider text-muted-foreground">{s.sub}</span>
+                        </div>
+                        <div className="text-[9px] font-medium text-foreground leading-tight">{s.t}</div>
+                      </div>
+                      {i < 2 && (
+                        <div className="flex items-center px-0.5 text-accent">
+                          <div className="w-2 h-px bg-accent/70" />
+                          <span className="text-[10px] leading-none -ml-0.5">▸</span>
+                        </div>
+                      )}
+                    </div>
+                  ))}
+                </div>
+
+                {/* Arrow down to email */}
+                <div className="relative flex justify-center mb-2" aria-hidden>
+                  <div className="h-3 w-px bg-accent/70" />
+                </div>
+
+                {/* Email preview */}
+                <div className="relative flex-1 bg-background rounded-md shadow-lift border border-border overflow-hidden flex flex-col">
+                  <div className="flex items-center gap-1.5 px-2.5 py-1.5 border-b border-border bg-secondary/40">
+                    <span className="w-1.5 h-1.5 rounded-full bg-accent" />
+                    <span className="w-1.5 h-1.5 rounded-full bg-primary/40" />
+                    <span className="w-1.5 h-1.5 rounded-full bg-muted-foreground/30" />
+                    <span className="ml-1 text-[8px] text-muted-foreground">email · preview</span>
+                  </div>
+                  <div className="px-3 py-2 flex-1 flex flex-col">
+                    <div className="text-[8px] text-muted-foreground mb-0.5">To: sarah.chen@email.com</div>
+                    <div className="text-[10px] font-display font-semibold text-foreground leading-tight mb-1.5">
+                      Sarah, welcome to our circle of champions.
+                    </div>
+                    <div className="space-y-0.5 mb-1.5">
+                      <div className="h-0.5 rounded-full bg-secondary w-full" />
+                      <div className="h-0.5 rounded-full bg-secondary w-[92%]" />
+                      <div className="h-0.5 rounded-full bg-secondary w-[78%]" />
+                    </div>
+                    <div className="mt-auto inline-flex self-start text-[8px] font-semibold bg-primary text-primary-foreground px-2 py-1 rounded">
+                      Meet the team →
+                    </div>
+                  </div>
+                </div>
               </div>
               <div className="p-7 lg:p-8">
                 <div className="text-xs uppercase tracking-widest text-accent mb-2">CRM · Automation</div>
