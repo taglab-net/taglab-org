@@ -562,15 +562,80 @@ function Landing() {
       <section id="approach" className="bg-primary text-primary-foreground py-24 lg:py-32">
         <div className="max-w-7xl mx-auto px-6 lg:px-10 grid lg:grid-cols-12 gap-12 items-center">
           <div className="lg:col-span-5 order-2 lg:order-1">
-            <div className="rounded-2xl overflow-hidden shadow-lift bg-card">
-              <img
-                src={vizStewardship}
-                alt="Abstract risograph illustration of an envelope with a heart, representing donor stewardship"
-                width={1200}
-                height={1400}
-                loading="lazy"
-                className="w-full h-[560px] object-contain bg-background"
-              />
+            <div className="rounded-2xl overflow-hidden shadow-lift bg-background text-foreground p-6 lg:p-7 relative">
+              {/* Header */}
+              <div className="flex items-center justify-between mb-5">
+                <div>
+                  <div className="text-[10px] uppercase tracking-[0.22em] text-accent font-medium">MarTech × Mission</div>
+                  <div className="font-display text-lg leading-tight mt-1">Connected stack</div>
+                </div>
+                <div className="flex items-center gap-1.5 text-[10px] text-muted-foreground">
+                  <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse" />
+                  Live sync
+                </div>
+              </div>
+
+              {/* Layer 1: Channels */}
+              <div className="rounded-lg border border-border bg-card p-3 mb-2">
+                <div className="flex items-center justify-between mb-2">
+                  <div className="text-[10px] uppercase tracking-wider text-muted-foreground font-medium">Channels</div>
+                  <div className="text-[10px] text-muted-foreground">Acquisition</div>
+                </div>
+                <div className="grid grid-cols-4 gap-1.5">
+                  {["Search", "Social", "Email", "Events"].map((c) => (
+                    <div key={c} className="text-[10px] text-center py-1.5 rounded bg-muted/60 text-foreground/80">
+                      {c}
+                    </div>
+                  ))}
+                </div>
+              </div>
+
+              {/* Connector */}
+              <div className="flex justify-center -my-1 relative z-10">
+                <div className="w-px h-3 bg-accent/40" />
+              </div>
+
+              {/* Layer 2: Platform */}
+              <div className="rounded-lg border-2 border-accent/40 bg-gradient-to-br from-accent/10 to-transparent p-3 mb-2">
+                <div className="flex items-center justify-between mb-2">
+                  <div className="text-[10px] uppercase tracking-wider text-accent font-medium">CRM + Automation</div>
+                  <div className="text-[10px] text-muted-foreground">Single source of truth</div>
+                </div>
+                <div className="grid grid-cols-3 gap-1.5 text-[10px]">
+                  <div className="rounded bg-background border border-border py-1.5 px-2 text-center">Segments</div>
+                  <div className="rounded bg-background border border-border py-1.5 px-2 text-center">Journeys</div>
+                  <div className="rounded bg-background border border-border py-1.5 px-2 text-center">Attribution</div>
+                </div>
+              </div>
+
+              <div className="flex justify-center -my-1 relative z-10">
+                <div className="w-px h-3 bg-accent/40" />
+              </div>
+
+              {/* Layer 3: Field outcomes */}
+              <div className="rounded-lg border border-border bg-card p-3 mb-4">
+                <div className="flex items-center justify-between mb-2">
+                  <div className="text-[10px] uppercase tracking-wider text-muted-foreground font-medium">On the ground</div>
+                  <div className="text-[10px] text-muted-foreground">What it funds</div>
+                </div>
+                <div className="space-y-1.5">
+                  {[
+                    { label: "Donor retention", val: "+24%" },
+                    { label: "Avg. gift value", val: "+$38" },
+                    { label: "Beneficiaries served", val: "12.4k" },
+                  ].map((r) => (
+                    <div key={r.label} className="flex items-center justify-between text-[11px]">
+                      <span className="text-muted-foreground">{r.label}</span>
+                      <span className="font-medium text-foreground tabular-nums">{r.val}</span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+
+              {/* Footer caption */}
+              <div className="text-[10px] text-muted-foreground leading-relaxed border-t border-border pt-3">
+                Every tool connected. Every dollar traced from first click to community impact.
+              </div>
             </div>
           </div>
           <div className="lg:col-span-6 lg:col-start-7 order-1 lg:order-2">
