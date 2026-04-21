@@ -709,12 +709,14 @@ function Landing() {
                 className="w-full h-72 object-cover"
               />
               <div className="p-8 lg:p-10">
-                <div className="text-xs uppercase tracking-widest text-accent mb-3">Rootwell Foundation</div>
-                <h3 className="font-display text-2xl mb-3">Rebuilding a lapsed donor program</h3>
+                <div className="text-xs uppercase tracking-widest text-accent mb-3">LA-based 501(c)(3)</div>
+                <h3 className="font-display text-2xl mb-3">A Christmas toy drive that hit its goal in 3 weeks</h3>
                 <p className="text-muted-foreground leading-relaxed">
-                  Segmented 18,000 dormant donors, rewrote the reactivation journey, and
-                  recovered <span className="text-foreground font-medium">$340k</span> in
-                  12 months.
+                  Helped a Los Angeles nonprofit fund a Christmas toy drive for children in
+                  South America, reaching its{" "}
+                  <span className="text-foreground font-medium">$100k</span> goal in just{" "}
+                  <span className="text-foreground font-medium">3 weeks</span> through
+                  targeted email marketing and social media advertising.
                 </p>
               </div>
             </motion.article>
@@ -727,16 +729,20 @@ function Landing() {
               className="bg-gradient-hero text-primary-foreground rounded-2xl p-10 lg:p-12 flex flex-col justify-between min-h-[440px] shadow-lift"
             >
               <div>
-                <div className="text-xs uppercase tracking-widest text-accent mb-3">Meadow Fund</div>
+                <div className="text-xs uppercase tracking-widest text-accent mb-3">Middle East humanitarian NGO</div>
                 <h3 className="font-display text-3xl lg:text-4xl mb-4 text-balance">
-                  "Our end-of-year campaign tripled. But the real win? Donors told us they
-                  finally felt seen."
+                  <span className="text-accent">+$8M</span> in annual online revenue by year two — addressing the consequences of a devastating war.
                 </h3>
+                <p className="text-primary-foreground/80 leading-relaxed">
+                  A full marketing-stack framework spanning innovative program fundraising
+                  campaigns, organic SEO, digital advertising, CRM, and continuous content
+                  updates.
+                </p>
               </div>
               <div>
                 <div className="h-px bg-primary-foreground/20 mb-4" />
                 <div className="text-sm text-primary-foreground/80">
-                  — Amara Okafor, Director of Development
+                  Year-two annual online revenue · full-stack engagement
                 </div>
               </div>
             </motion.article>
