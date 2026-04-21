@@ -164,7 +164,188 @@ function Landing() {
         </div>
       </section>
 
-      {/* APPROACH — split editorial */}
+      {/* CAPABILITIES IN ACTION — visual showcase */}
+      <section id="capabilities" className="py-24 lg:py-32 bg-secondary/40 border-y border-border">
+        <div className="max-w-7xl mx-auto px-6 lg:px-10">
+          <div className="grid lg:grid-cols-12 gap-10 mb-16">
+            <div className="lg:col-span-6">
+              <div className="text-xs uppercase tracking-[0.22em] text-accent mb-4">In practice</div>
+              <h2 className="font-display text-4xl md:text-5xl leading-[1.05] text-balance">
+                What the work actually looks like.
+              </h2>
+            </div>
+            <div className="lg:col-span-5 lg:col-start-8 text-lg text-muted-foreground leading-relaxed flex items-end">
+              A peek at the artifacts, systems, and dashboards we build alongside your team.
+            </div>
+          </div>
+
+          <div className="grid md:grid-cols-2 gap-6 lg:gap-8">
+            {/* CRM Workflow + Email */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-60px" }}
+              transition={{ duration: 0.6 }}
+              className="bg-card rounded-2xl overflow-hidden border border-border shadow-soft group"
+            >
+              <div className="aspect-[4/3] overflow-hidden bg-primary/5">
+                <img
+                  src={vizCrm}
+                  alt="Flat illustration of a CRM workflow: connected journey nodes flowing into a stylized email template"
+                  width={1280}
+                  height={960}
+                  loading="lazy"
+                  className="w-full h-full object-cover group-hover:scale-[1.02] transition-transform duration-700"
+                />
+              </div>
+              <div className="p-7 lg:p-8">
+                <div className="text-xs uppercase tracking-widest text-accent mb-2">CRM · Automation</div>
+                <h3 className="font-display text-2xl mb-2">Workflow design & email templates</h3>
+                <p className="text-muted-foreground leading-relaxed">
+                  Multi-step donor journeys — welcome, thank-you, re-engagement — wired into your
+                  CRM with on-brand email templates ready to send.
+                </p>
+              </div>
+            </motion.div>
+
+            {/* Donation campaign + form — built as real UI */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-60px" }}
+              transition={{ duration: 0.6, delay: 0.08 }}
+              className="bg-card rounded-2xl overflow-hidden border border-border shadow-soft"
+            >
+              <div className="aspect-[4/3] bg-gradient-warm p-6 lg:p-8 flex items-center justify-center">
+                <div className="w-full max-w-sm bg-background rounded-xl shadow-lift border border-border p-5">
+                  <div className="flex items-center justify-between mb-3">
+                    <div className="text-[10px] uppercase tracking-widest text-accent">Spring Campaign</div>
+                    <div className="text-[10px] text-muted-foreground">78% of goal</div>
+                  </div>
+                  <div className="h-1.5 rounded-full bg-secondary overflow-hidden mb-5">
+                    <div className="h-full w-[78%] bg-accent rounded-full" />
+                  </div>
+                  <div className="font-display text-lg mb-3 leading-tight">Choose a gift</div>
+                  <div className="grid grid-cols-4 gap-1.5 mb-3">
+                    {["$25", "$50", "$100", "$250"].map((a, i) => (
+                      <div
+                        key={a}
+                        className={`text-xs py-2 rounded-md text-center font-medium ${
+                          i === 1
+                            ? "bg-primary text-primary-foreground"
+                            : "bg-secondary text-foreground"
+                        }`}
+                      >
+                        {a}
+                      </div>
+                    ))}
+                  </div>
+                  <div className="text-[11px] py-2 px-3 rounded-md border border-border text-muted-foreground mb-3">
+                    Custom amount
+                  </div>
+                  <div className="bg-accent text-accent-foreground text-xs font-semibold py-2.5 rounded-md text-center">
+                    Give now →
+                  </div>
+                </div>
+              </div>
+              <div className="p-7 lg:p-8">
+                <div className="text-xs uppercase tracking-widest text-accent mb-2">Campaigns · Fundraising</div>
+                <h3 className="font-display text-2xl mb-2">Donation campaigns & online forms</h3>
+                <p className="text-muted-foreground leading-relaxed">
+                  Conversion-tuned giving pages, suggested amounts, and campaign pages that make
+                  saying yes the easiest thing a donor does all week.
+                </p>
+              </div>
+            </motion.div>
+
+            {/* Impact stories + annual report */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-60px" }}
+              transition={{ duration: 0.6, delay: 0.16 }}
+              className="bg-card rounded-2xl overflow-hidden border border-border shadow-soft group"
+            >
+              <div className="aspect-[4/3] overflow-hidden bg-background">
+                <img
+                  src={vizImpactReport}
+                  alt="Flat illustration of an impact stories website beside a printed annual impact report cover"
+                  width={1280}
+                  height={960}
+                  loading="lazy"
+                  className="w-full h-full object-cover group-hover:scale-[1.02] transition-transform duration-700"
+                />
+              </div>
+              <div className="p-7 lg:p-8">
+                <div className="text-xs uppercase tracking-widest text-accent mb-2">Content · Reporting</div>
+                <h3 className="font-display text-2xl mb-2">Impact stories & annual reports</h3>
+                <p className="text-muted-foreground leading-relaxed">
+                  Web-native story pages and printed annual reports that turn outcomes into
+                  narrative — the kind donors forward, save, and screenshot.
+                </p>
+              </div>
+            </motion.div>
+
+            {/* Analytics dashboard — built as real UI */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-60px" }}
+              transition={{ duration: 0.6, delay: 0.24 }}
+              className="bg-card rounded-2xl overflow-hidden border border-border shadow-soft"
+            >
+              <div className="aspect-[4/3] bg-primary p-6 lg:p-8 flex items-center justify-center">
+                <div className="w-full bg-background rounded-xl shadow-lift p-5">
+                  <div className="grid grid-cols-3 gap-3 mb-4">
+                    <div className="bg-secondary/60 rounded-lg p-3">
+                      <div className="text-[9px] uppercase tracking-wider text-muted-foreground mb-1">Revenue</div>
+                      <div className="font-display text-lg text-primary leading-none">$1.24M</div>
+                    </div>
+                    <div className="bg-secondary/60 rounded-lg p-3">
+                      <div className="text-[9px] uppercase tracking-wider text-muted-foreground mb-1">Avg gift</div>
+                      <div className="font-display text-lg text-primary leading-none">$148</div>
+                    </div>
+                    <div className="bg-secondary/60 rounded-lg p-3">
+                      <div className="text-[9px] uppercase tracking-wider text-muted-foreground mb-1">Donors</div>
+                      <div className="font-display text-lg text-primary leading-none">8,420</div>
+                    </div>
+                  </div>
+                  <div className="text-[9px] uppercase tracking-wider text-muted-foreground mb-2">Donor tiers</div>
+                  <div className="space-y-1.5">
+                    {[
+                      { label: "Champion", pct: 92, amt: "$500+" },
+                      { label: "Patron", pct: 68, amt: "$250" },
+                      { label: "Sustainer", pct: 44, amt: "$100" },
+                      { label: "Grassroots", pct: 28, amt: "<$100" },
+                    ].map((t) => (
+                      <div key={t.label} className="flex items-center gap-2 text-[10px]">
+                        <div className="w-16 text-muted-foreground shrink-0">{t.label}</div>
+                        <div className="flex-1 h-1.5 bg-secondary rounded-full overflow-hidden">
+                          <div
+                            className="h-full bg-accent rounded-full"
+                            style={{ width: `${t.pct}%` }}
+                          />
+                        </div>
+                        <div className="w-10 text-right font-medium text-foreground">{t.amt}</div>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              </div>
+              <div className="p-7 lg:p-8">
+                <div className="text-xs uppercase tracking-widest text-accent mb-2">Analytics · Insight</div>
+                <h3 className="font-display text-2xl mb-2">Dashboards you'll actually open</h3>
+                <p className="text-muted-foreground leading-relaxed">
+                  Revenue, average gift, total donors, and tier breakdowns — rolled up into views
+                  your board understands and your team trusts.
+                </p>
+              </div>
+            </motion.div>
+          </div>
+        </div>
+      </section>
+
+
       <section id="approach" className="bg-primary text-primary-foreground py-24 lg:py-32">
         <div className="max-w-7xl mx-auto px-6 lg:px-10 grid lg:grid-cols-12 gap-12 items-center">
           <div className="lg:col-span-5 order-2 lg:order-1">
