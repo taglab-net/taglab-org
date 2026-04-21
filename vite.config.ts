@@ -7,3 +7,8 @@
 import { defineConfig } from "@lovable.dev/vite-tanstack-config";
 
 export default defineConfig();
+import { defineConfig } from 'vite'
+
+export default defineConfig({
+  base: '/taglab-org/',
+})
