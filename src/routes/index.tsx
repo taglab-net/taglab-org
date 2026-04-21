@@ -86,7 +86,7 @@ function Landing() {
               {[
                 { k: "62%", v: "avg. donor retention lift" },
                 { k: "3.4×", v: "email revenue growth" },
-                { k: "40+", v: "nonprofits served" },
+                { k: "+22%", v: "avg. gift value uplift" },
               ].map((s) => (
                 <div key={s.k}>
                   <div className="font-display text-3xl text-primary">{s.k}</div>
