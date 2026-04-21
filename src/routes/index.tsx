@@ -709,12 +709,14 @@ function Landing() {
                 className="w-full h-72 object-cover"
               />
               <div className="p-8 lg:p-10">
-                <div className="text-xs uppercase tracking-widest text-accent mb-3">Rootwell Foundation</div>
-                <h3 className="font-display text-2xl mb-3">Rebuilding a lapsed donor program</h3>
+                <div className="text-xs uppercase tracking-widest text-accent mb-3">LA-based 501(c)(3)</div>
+                <h3 className="font-display text-2xl mb-3">A Christmas toy drive that hit its goal in 3 weeks</h3>
                 <p className="text-muted-foreground leading-relaxed">
-                  Segmented 18,000 dormant donors, rewrote the reactivation journey, and
-                  recovered <span className="text-foreground font-medium">$340k</span> in
-                  12 months.
+                  Helped a Los Angeles nonprofit fund a Christmas toy drive for children in
+                  South America, reaching its{" "}
+                  <span className="text-foreground font-medium">$100k</span> goal in just{" "}
+                  <span className="text-foreground font-medium">3 weeks</span> through
+                  targeted email marketing and social media advertising.
                 </p>
               </div>
             </motion.article>
