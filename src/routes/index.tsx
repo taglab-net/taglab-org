@@ -35,6 +35,7 @@ function Landing() {
           </a>
           <div className="hidden md:flex items-center gap-8 text-sm text-muted-foreground">
             <a href="#services" className="hover:text-foreground transition">Services</a>
+            <a href="#capabilities" className="hover:text-foreground transition">In practice</a>
             <a href="#approach" className="hover:text-foreground transition">Approach</a>
             <a href="#impact" className="hover:text-foreground transition">Impact</a>
             <a href="#contact" className="hover:text-foreground transition">Contact</a>
