@@ -401,8 +401,8 @@ function Landing() {
               transition={{ duration: 0.6, delay: 0.24 }}
               className="bg-card rounded-2xl overflow-hidden border border-border shadow-soft"
             >
-              <div className="aspect-[4/3] bg-primary p-5 lg:p-6 flex items-center justify-center">
-                <div className="w-full bg-background rounded-xl shadow-lift p-4 text-foreground">
+              <div className="aspect-[4/3] bg-primary p-4 lg:p-5 flex items-center justify-center overflow-hidden">
+                <div className="w-full bg-background rounded-xl shadow-lift p-3 text-foreground text-[8px] leading-tight">
                   {/* Toolbar */}
                   <div className="flex items-center justify-between mb-3 pb-2 border-b border-border">
                     <div className="flex items-center gap-1.5">
