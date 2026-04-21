@@ -6,7 +6,7 @@ import impactField from "@/assets/impact-field.jpg";
 import vizStewardship from "@/assets/viz-stewardship.jpg";
 import vizCrm from "@/assets/viz-crm-workflow.jpg";
 import vizAnalytics from "@/assets/viz-analytics.jpg";
-import vizImpactReport from "@/assets/viz-impact-report.jpg";
+
 
 export const Route = createFileRoute("/")({
   component: Landing,
