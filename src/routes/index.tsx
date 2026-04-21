@@ -397,41 +397,147 @@ function Landing() {
               transition={{ duration: 0.6, delay: 0.24 }}
               className="bg-card rounded-2xl overflow-hidden border border-border shadow-soft"
             >
-              <div className="aspect-[4/3] bg-primary p-6 lg:p-8 flex items-center justify-center">
-                <div className="w-full bg-background rounded-xl shadow-lift p-5">
-                  <div className="grid grid-cols-3 gap-3 mb-4">
-                    <div className="bg-secondary/60 rounded-lg p-3">
-                      <div className="text-[9px] uppercase tracking-wider text-muted-foreground mb-1">Revenue</div>
-                      <div className="font-display text-lg text-primary leading-none">$1.24M</div>
+              <div className="aspect-[4/3] bg-primary p-5 lg:p-6 flex items-center justify-center">
+                <div className="w-full bg-background rounded-xl shadow-lift p-4 text-foreground">
+                  {/* Toolbar */}
+                  <div className="flex items-center justify-between mb-3 pb-2 border-b border-border">
+                    <div className="flex items-center gap-1.5">
+                      <div className="w-1.5 h-1.5 rounded-full bg-destructive/60" />
+                      <div className="w-1.5 h-1.5 rounded-full bg-accent/70" />
+                      <div className="w-1.5 h-1.5 rounded-full bg-primary/40" />
+                      <div className="ml-2 text-[8px] font-medium text-muted-foreground">Donor Intelligence</div>
                     </div>
-                    <div className="bg-secondary/60 rounded-lg p-3">
-                      <div className="text-[9px] uppercase tracking-wider text-muted-foreground mb-1">Avg gift</div>
-                      <div className="font-display text-lg text-primary leading-none">$148</div>
-                    </div>
-                    <div className="bg-secondary/60 rounded-lg p-3">
-                      <div className="text-[9px] uppercase tracking-wider text-muted-foreground mb-1">Donors</div>
-                      <div className="font-display text-lg text-primary leading-none">8,420</div>
+                    <div className="flex items-center gap-1">
+                      {["Overview", "Donors", "Campaigns", "Segments"].map((t, i) => (
+                        <div
+                          key={t}
+                          className={`text-[8px] px-1.5 py-0.5 rounded ${i === 0 ? "bg-primary text-primary-foreground" : "text-muted-foreground"}`}
+                        >
+                          {t}
+                        </div>
+                      ))}
                     </div>
                   </div>
-                  <div className="text-[9px] uppercase tracking-wider text-muted-foreground mb-2">Donor tiers</div>
-                  <div className="space-y-1.5">
+
+                  {/* Filter row */}
+                  <div className="flex items-center gap-1.5 mb-3 flex-wrap">
+                    <div className="text-[8px] px-1.5 py-0.5 rounded border border-border bg-secondary/40 text-foreground">
+                      FY2025 vs FY2024 ▾
+                    </div>
+                    <div className="text-[8px] px-1.5 py-0.5 rounded border border-border text-muted-foreground">
+                      All campaigns
+                    </div>
+                    <div className="text-[8px] px-1.5 py-0.5 rounded border border-border text-muted-foreground">
+                      All sources
+                    </div>
+                    <div className="ml-auto text-[8px] text-accent font-medium">+18.4% YoY ↑</div>
+                  </div>
+
+                  {/* KPI row */}
+                  <div className="grid grid-cols-4 gap-1.5 mb-3">
                     {[
-                      { label: "Champion", pct: 92, amt: "$500+" },
-                      { label: "Patron", pct: 68, amt: "$250" },
-                      { label: "Sustainer", pct: 44, amt: "$100" },
-                      { label: "Grassroots", pct: 28, amt: "<$100" },
-                    ].map((t) => (
-                      <div key={t.label} className="flex items-center gap-2 text-[10px]">
-                        <div className="w-16 text-muted-foreground shrink-0">{t.label}</div>
-                        <div className="flex-1 h-1.5 bg-secondary rounded-full overflow-hidden">
-                          <div
-                            className="h-full bg-accent rounded-full"
-                            style={{ width: `${t.pct}%` }}
-                          />
-                        </div>
-                        <div className="w-10 text-right font-medium text-foreground">{t.amt}</div>
+                      { l: "Revenue", v: "$1.24M", d: "+18%" },
+                      { l: "Avg gift", v: "$148", d: "+6%" },
+                      { l: "Donors", v: "8,420", d: "+11%" },
+                      { l: "Retention", v: "62%", d: "+3pt" },
+                    ].map((k) => (
+                      <div key={k.l} className="bg-secondary/50 rounded-md p-1.5">
+                        <div className="text-[7px] uppercase tracking-wider text-muted-foreground">{k.l}</div>
+                        <div className="font-display text-[13px] text-primary leading-tight">{k.v}</div>
+                        <div className="text-[7px] text-accent">{k.d}</div>
                       </div>
                     ))}
+                  </div>
+
+                  {/* Two column: YoY chart + Source breakdown */}
+                  <div className="grid grid-cols-5 gap-2 mb-3">
+                    <div className="col-span-3 bg-secondary/30 rounded-md p-2">
+                      <div className="flex items-center justify-between mb-1.5">
+                        <div className="text-[8px] uppercase tracking-wider text-muted-foreground">Revenue · YoY</div>
+                        <div className="flex items-center gap-1.5">
+                          <span className="flex items-center gap-0.5 text-[7px] text-muted-foreground">
+                            <span className="w-1.5 h-1.5 rounded-full bg-primary/40" />2024
+                          </span>
+                          <span className="flex items-center gap-0.5 text-[7px] text-muted-foreground">
+                            <span className="w-1.5 h-1.5 rounded-full bg-accent" />2025
+                          </span>
+                        </div>
+                      </div>
+                      <div className="flex items-end gap-1 h-14">
+                        {[
+                          [30, 42], [45, 55], [38, 60], [52, 70], [60, 75],
+                          [55, 82], [70, 88], [65, 95], [75, 90], [82, 98], [88, 110], [95, 120],
+                        ].map(([a, b], i) => (
+                          <div key={i} className="flex-1 flex items-end gap-px h-full">
+                            <div className="flex-1 bg-primary/30 rounded-sm" style={{ height: `${a}%` }} />
+                            <div className="flex-1 bg-accent rounded-sm" style={{ height: `${b}%` }} />
+                          </div>
+                        ))}
+                      </div>
+                      <div className="flex justify-between text-[6px] text-muted-foreground mt-1">
+                        <span>J</span><span>F</span><span>M</span><span>A</span><span>M</span><span>J</span>
+                        <span>J</span><span>A</span><span>S</span><span>O</span><span>N</span><span>D</span>
+                      </div>
+                    </div>
+                    <div className="col-span-2 bg-secondary/30 rounded-md p-2">
+                      <div className="text-[8px] uppercase tracking-wider text-muted-foreground mb-1.5">By source</div>
+                      <div className="space-y-1">
+                        {[
+                          { l: "Online gifts", pct: 38, v: "$471k" },
+                          { l: "Grants", pct: 27, v: "$334k" },
+                          { l: "Wire / Major", pct: 18, v: "$223k" },
+                          { l: "P2P", pct: 11, v: "$136k" },
+                          { l: "Checks", pct: 6, v: "$74k" },
+                        ].map((s) => (
+                          <div key={s.l} className="flex items-center gap-1.5 text-[8px]">
+                            <div className="w-14 text-muted-foreground shrink-0 truncate">{s.l}</div>
+                            <div className="flex-1 h-1 bg-secondary rounded-full overflow-hidden">
+                              <div className="h-full bg-accent rounded-full" style={{ width: `${s.pct}%` }} />
+                            </div>
+                            <div className="w-8 text-right font-medium">{s.v}</div>
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Donor tiers + Top donors */}
+                  <div className="grid grid-cols-5 gap-2">
+                    <div className="col-span-3 bg-secondary/30 rounded-md p-2">
+                      <div className="text-[8px] uppercase tracking-wider text-muted-foreground mb-1.5">Donor tiers</div>
+                      <div className="space-y-1">
+                        {[
+                          { label: "Champion", pct: 92, amt: "$500+" },
+                          { label: "Patron", pct: 68, amt: "$250" },
+                          { label: "Sustainer", pct: 44, amt: "$100" },
+                          { label: "Grassroots", pct: 28, amt: "<$100" },
+                        ].map((t) => (
+                          <div key={t.label} className="flex items-center gap-1.5 text-[8px]">
+                            <div className="w-14 text-muted-foreground shrink-0">{t.label}</div>
+                            <div className="flex-1 h-1 bg-secondary rounded-full overflow-hidden">
+                              <div className="h-full bg-accent rounded-full" style={{ width: `${t.pct}%` }} />
+                            </div>
+                            <div className="w-8 text-right font-medium">{t.amt}</div>
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+                    <div className="col-span-2 bg-secondary/30 rounded-md p-2">
+                      <div className="text-[8px] uppercase tracking-wider text-muted-foreground mb-1.5">Top donors</div>
+                      <div className="space-y-0.5">
+                        {[
+                          { n: "S. Chen", v: "$24k" },
+                          { n: "Aria Fund", v: "$18k" },
+                          { n: "M. Okafor", v: "$12k" },
+                          { n: "Hale Trust", v: "$9k" },
+                        ].map((d) => (
+                          <div key={d.n} className="flex justify-between text-[8px]">
+                            <span className="text-foreground">{d.n}</span>
+                            <span className="text-muted-foreground">{d.v}</span>
+                          </div>
+                        ))}
+                      </div>
+                    </div>
                   </div>
                 </div>
               </div>
