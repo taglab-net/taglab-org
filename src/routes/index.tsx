@@ -786,6 +786,7 @@ function Landing() {
             <div className="font-display text-xl font-semibold flex items-center gap-2">
               <span className="inline-block w-2 h-2 rounded-full bg-accent" />
               taglab<span className="text-primary">studio</span>
+              <span className="text-sm font-normal text-muted-foreground ml-1">(a Taglab agency)</span>
             </div>
             <div className="text-sm text-muted-foreground mt-2">
               Digital marketing, built for nonprofits.
