@@ -6,7 +6,7 @@ import impactField from "@/assets/impact-field.jpg";
 import vizStewardship from "@/assets/viz-stewardship.jpg";
 import vizCrm from "@/assets/viz-crm-workflow.jpg";
 import vizAnalytics from "@/assets/viz-analytics.jpg";
-import vizImpactReport from "@/assets/viz-impact-report.jpg";
+
 
 export const Route = createFileRoute("/")({
   component: Landing,
@@ -268,15 +268,59 @@ function Landing() {
               transition={{ duration: 0.6, delay: 0.16 }}
               className="bg-card rounded-2xl overflow-hidden border border-border shadow-soft group"
             >
-              <div className="aspect-[4/3] overflow-hidden bg-background">
-                <img
-                  src={vizImpactReport}
-                  alt="Flat illustration of an impact stories website beside a printed annual impact report cover"
-                  width={1280}
-                  height={960}
-                  loading="lazy"
-                  className="w-full h-full object-cover group-hover:scale-[1.02] transition-transform duration-700"
-                />
+              <div className="aspect-[4/3] bg-gradient-warm p-6 lg:p-8 flex items-center justify-center gap-4 lg:gap-5 relative overflow-hidden">
+                <div className="absolute -top-10 -left-10 w-40 h-40 rounded-full bg-accent/20 blur-2xl" aria-hidden />
+                <div className="absolute -bottom-12 -right-8 w-48 h-48 rounded-full bg-primary/15 blur-2xl" aria-hidden />
+
+                {/* Impact Story card (web) */}
+                <div className="relative flex-1 bg-background rounded-xl shadow-lift border border-border overflow-hidden rotate-[-2deg] max-w-[55%]">
+                  <div className="h-5 bg-secondary/60 border-b border-border flex items-center gap-1 px-2">
+                    <span className="w-1.5 h-1.5 rounded-full bg-accent/70" />
+                    <span className="w-1.5 h-1.5 rounded-full bg-primary/40" />
+                    <span className="w-1.5 h-1.5 rounded-full bg-muted-foreground/30" />
+                  </div>
+                  <div className="relative h-20 bg-primary overflow-hidden">
+                    <div className="absolute bottom-0 left-0 right-0 h-12 bg-accent/80 rounded-t-[50%]" />
+                    <div className="absolute top-2 right-3 w-5 h-5 rounded-full bg-background/90" />
+                    <div className="absolute bottom-2 left-4 w-3 h-4 rounded-full bg-background/70" />
+                  </div>
+                  <div className="p-3">
+                    <div className="text-[8px] uppercase tracking-widest text-accent mb-1">Story · Meadow Fund</div>
+                    <div className="font-display text-[11px] leading-tight text-foreground mb-2">
+                      How 240 families found stable housing this year.
+                    </div>
+                    <div className="space-y-1">
+                      <div className="h-1 rounded-full bg-secondary w-full" />
+                      <div className="h-1 rounded-full bg-secondary w-[85%]" />
+                      <div className="h-1 rounded-full bg-secondary w-[70%]" />
+                    </div>
+                    <div className="mt-2 inline-flex items-center gap-1 text-[8px] font-medium text-primary">
+                      Read story <span aria-hidden>→</span>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Annual Impact Report cover */}
+                <div className="relative flex-shrink-0 w-[38%] aspect-[3/4] bg-primary rounded-lg shadow-lift rotate-[3deg] overflow-hidden flex flex-col p-3 text-primary-foreground">
+                  <div className="absolute top-3 right-3 w-8 h-8 rounded-full bg-accent" />
+                  <div className="absolute -bottom-4 -left-3 w-16 h-16 rounded-full bg-accent/30" />
+                  <div className="text-[7px] uppercase tracking-[0.2em] text-accent mb-1 relative">Annual Impact</div>
+                  <div className="font-display text-[11px] leading-tight mb-2 relative">Report 2024</div>
+                  <div className="mt-auto space-y-1.5 relative">
+                    <div>
+                      <div className="font-display text-base leading-none">$1.2M</div>
+                      <div className="text-[7px] opacity-70 uppercase tracking-wider">raised</div>
+                    </div>
+                    <div>
+                      <div className="font-display text-base leading-none">8,420</div>
+                      <div className="text-[7px] opacity-70 uppercase tracking-wider">donors</div>
+                    </div>
+                    <div>
+                      <div className="font-display text-base leading-none text-accent">96%</div>
+                      <div className="text-[7px] opacity-70 uppercase tracking-wider">to programs</div>
+                    </div>
+                  </div>
+                </div>
               </div>
               <div className="p-7 lg:p-8">
                 <div className="text-xs uppercase tracking-widest text-accent mb-2">Content · Reporting</div>
