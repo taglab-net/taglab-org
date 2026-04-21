@@ -168,14 +168,16 @@ function Landing() {
       <section id="approach" className="bg-primary text-primary-foreground py-24 lg:py-32">
         <div className="max-w-7xl mx-auto px-6 lg:px-10 grid lg:grid-cols-12 gap-12 items-center">
           <div className="lg:col-span-5 order-2 lg:order-1">
-            <img
-              src={donorLetter}
-              alt="Donor smiling as she reads a handwritten thank-you letter by a window"
-              width={1200}
-              height={1400}
-              loading="lazy"
-              className="w-full rounded-2xl object-cover h-[560px] shadow-lift"
-            />
+            <div className="rounded-2xl overflow-hidden shadow-lift bg-card">
+              <img
+                src={vizStewardship}
+                alt="Abstract risograph illustration of an envelope with a heart, representing donor stewardship"
+                width={1200}
+                height={1400}
+                loading="lazy"
+                className="w-full h-[560px] object-contain bg-background"
+              />
+            </div>
           </div>
           <div className="lg:col-span-6 lg:col-start-7 order-1 lg:order-2">
             <div className="text-xs uppercase tracking-[0.22em] text-accent mb-4">Our approach</div>
