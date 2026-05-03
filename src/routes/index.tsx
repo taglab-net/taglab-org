@@ -629,7 +629,7 @@ function Landing() {
                 We know the nonprofit ecosystem from the inside: tight budgets, lean teams,
                 board reporting, restricted funds, grant cycles. That context shapes how we
                 price and how we work. By running a focused, remote-first studio, our
-                operating costs sit roughly <span className="text-foreground font-medium">60% below a typical for-profit agency</span> —
+                operating costs sit roughly <span className="text-white font-semibold">60% below a typical for-profit agency</span> —
                 and we pass that difference straight back to you, so more of every dollar
                 reaches the mission.
               </p>
