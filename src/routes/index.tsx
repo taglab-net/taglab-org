@@ -1,6 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
 
-import { motion } from "framer-motion";
 import impactField from "@/assets/impact-field.jpg";
 import { Button } from "@/components/ui/button";
 
@@ -58,7 +57,7 @@ function Landing() {
         <div aria-hidden className="absolute top-20 -right-32 w-[420px] h-[420px] rounded-full bg-accent/10 blur-3xl" />
 
         <div className="relative max-w-6xl mx-auto px-6 lg:px-10 pt-24 lg:pt-32 pb-24 lg:pb-36 text-center">
-          <motion.div
+          <div
             initial={{ opacity: 0, y: 24 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
@@ -99,7 +98,7 @@ function Landing() {
                 </div>
               ))}
             </div>
-          </motion.div>
+          </div>
         </div>
       </section>
 
@@ -121,7 +120,7 @@ function Landing() {
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             {services.map((s, i) => (
-              <motion.div
+              <div
                 key={s.n}
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -134,7 +133,7 @@ function Landing() {
                 </div>
                 <h3 className="font-display text-xl mb-2 font-semibold">{s.t}</h3>
                 <p className="text-muted-foreground leading-relaxed text-sm">{s.d}</p>
-              </motion.div>
+              </div>
             ))}
           </div>
         </div>
@@ -157,7 +156,7 @@ function Landing() {
 
           <div className="grid md:grid-cols-2 gap-6 lg:gap-8">
             {/* CRM Workflow + Email */}
-            <motion.div
+            <div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-60px" }}
@@ -239,10 +238,10 @@ function Landing() {
                   CRM with on-brand email templates ready to send.
                 </p>
               </div>
-            </motion.div>
+            </div>
 
             {/* Donation campaign + form — built as real UI */}
-            <motion.div
+            <div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-60px" }}
@@ -289,10 +288,10 @@ function Landing() {
                   saying yes the easiest thing a donor does all week.
                 </p>
               </div>
-            </motion.div>
+            </div>
 
             {/* Impact stories + annual report */}
-            <motion.div
+            <div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-60px" }}
@@ -361,10 +360,10 @@ function Landing() {
                   narrative — the kind donors forward, save, and screenshot.
                 </p>
               </div>
-            </motion.div>
+            </div>
 
             {/* Analytics dashboard — built as real UI */}
-            <motion.div
+            <div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-60px" }}
@@ -523,7 +522,7 @@ function Landing() {
                   your board understands and your team trusts.
                 </p>
               </div>
-            </motion.div>
+            </div>
           </div>
         </div>
       </section>
@@ -664,7 +663,7 @@ function Landing() {
           </div>
 
           <div className="grid lg:grid-cols-2 gap-8">
-            <motion.article
+            <article
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
@@ -690,9 +689,9 @@ function Landing() {
                   targeted email marketing and social media advertising.
                 </p>
               </div>
-            </motion.article>
+            </article>
 
-            <motion.article
+            <article
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
@@ -716,7 +715,7 @@ function Landing() {
                   Year-two annual online revenue · full-stack engagement
                 </div>
               </div>
-            </motion.article>
+            </article>
           </div>
         </div>
       </section>
