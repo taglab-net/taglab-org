@@ -529,7 +529,8 @@ function Landing() {
       </section>
 
 
-      <section id="approach" className="bg-primary text-primary-foreground py-24 lg:py-32">
+      <section id="approach" className="bg-gradient-hero text-white py-24 lg:py-32 relative overflow-hidden">
+        <div aria-hidden className="absolute -top-32 right-0 w-[500px] h-[500px] rounded-full bg-[var(--primary-glow)]/15 blur-3xl" />
         <div className="max-w-7xl mx-auto px-6 lg:px-10 grid lg:grid-cols-12 gap-12 items-center">
           <div className="lg:col-span-5 order-2 lg:order-1">
             <div className="rounded-2xl overflow-hidden shadow-lift bg-background text-foreground p-6 lg:p-7 relative">
