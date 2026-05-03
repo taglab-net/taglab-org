@@ -614,7 +614,7 @@ function Landing() {
             <h2 className="font-display text-4xl md:text-5xl leading-[1.05] mb-8 text-balance">
               We treat every donor like the person they are.
             </h2>
-            <div className="space-y-6 text-primary-foreground/85 text-lg leading-relaxed">
+            <div className="space-y-6 text-white/85 text-lg leading-relaxed">
               <p>
                 Most nonprofit marketing reads like a bank statement. We think that's a missed
                 opportunity. Your donors gave because they believed. Our job is to keep that
