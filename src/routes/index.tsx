@@ -58,9 +58,6 @@ function Landing() {
 
         <div className="relative max-w-6xl mx-auto px-6 lg:px-10 pt-24 lg:pt-32 pb-24 lg:pb-36 text-center">
           <div
-            initial={{ opacity: 0, y: 24 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
           >
             <span className="inline-block rounded-full border border-white/20 bg-white/10 px-4 py-1.5 text-[11px] font-medium tracking-[0.2em] text-white/90 uppercase backdrop-blur-sm">
               Donor CRM · Campaigns · Storytelling · Stewardship
@@ -122,10 +119,6 @@ function Landing() {
             {services.map((s, i) => (
               <div
                 key={s.n}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, margin: "-60px" }}
-                transition={{ duration: 0.5, delay: (i % 3) * 0.08 }}
                 className="group rounded-3xl border border-border bg-card p-8 lg:p-9 shadow-card transition-all hover:-translate-y-1 hover:shadow-elegant hover:border-primary/30"
               >
                 <div className="mb-5 inline-flex h-12 w-12 items-center justify-center rounded-2xl bg-gradient-primary text-primary-foreground shadow-soft font-display font-bold text-sm tracking-wider">
@@ -157,10 +150,6 @@ function Landing() {
           <div className="grid md:grid-cols-2 gap-6 lg:gap-8">
             {/* CRM Workflow + Email */}
             <div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-60px" }}
-              transition={{ duration: 0.6 }}
               className="bg-card rounded-2xl overflow-hidden border border-border shadow-soft group"
             >
               <div className="aspect-[4/3] bg-primary p-5 lg:p-6 flex flex-col relative overflow-hidden">
@@ -242,10 +231,6 @@ function Landing() {
 
             {/* Donation campaign + form — built as real UI */}
             <div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-60px" }}
-              transition={{ duration: 0.6, delay: 0.08 }}
               className="bg-card rounded-2xl overflow-hidden border border-border shadow-soft"
             >
               <div className="aspect-[4/3] bg-gradient-warm p-6 lg:p-8 flex items-center justify-center">
@@ -292,10 +277,6 @@ function Landing() {
 
             {/* Impact stories + annual report */}
             <div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-60px" }}
-              transition={{ duration: 0.6, delay: 0.16 }}
               className="bg-card rounded-2xl overflow-hidden border border-border shadow-soft group"
             >
               <div className="aspect-[4/3] bg-gradient-warm p-6 lg:p-8 flex items-center justify-center gap-4 lg:gap-5 relative overflow-hidden">
@@ -364,10 +345,6 @@ function Landing() {
 
             {/* Analytics dashboard — built as real UI */}
             <div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-60px" }}
-              transition={{ duration: 0.6, delay: 0.24 }}
               className="bg-card rounded-2xl overflow-hidden border border-border shadow-soft"
             >
               <div className="aspect-[4/3] bg-primary p-4 lg:p-5 flex items-center justify-center overflow-hidden">
@@ -664,10 +641,6 @@ function Landing() {
 
           <div className="grid lg:grid-cols-2 gap-8">
             <article
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6 }}
               className="bg-card rounded-2xl overflow-hidden border border-border shadow-soft"
             >
               <img
@@ -692,10 +665,6 @@ function Landing() {
             </article>
 
             <article
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: 0.1 }}
               className="bg-gradient-hero text-primary-foreground rounded-2xl p-10 lg:p-12 flex flex-col justify-between min-h-[440px] shadow-lift"
             >
               <div>
