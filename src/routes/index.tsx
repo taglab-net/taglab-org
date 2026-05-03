@@ -119,7 +119,7 @@ function Landing() {
             </div>
           </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-px bg-border rounded-2xl overflow-hidden border border-border">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             {services.map((s, i) => (
               <motion.div
                 key={s.n}
@@ -127,11 +127,13 @@ function Landing() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: "-60px" }}
                 transition={{ duration: 0.5, delay: (i % 3) * 0.08 }}
-                className="bg-card p-8 lg:p-10 group hover:bg-secondary/60 transition-colors"
+                className="group rounded-3xl border border-border bg-card p-8 lg:p-9 shadow-card transition-all hover:-translate-y-1 hover:shadow-elegant hover:border-primary/30"
               >
-                <div className="font-display text-sm text-accent mb-6 tracking-widest">{s.n}</div>
-                <h3 className="font-display text-2xl mb-3">{s.t}</h3>
-                <p className="text-muted-foreground leading-relaxed">{s.d}</p>
+                <div className="mb-5 inline-flex h-12 w-12 items-center justify-center rounded-2xl bg-gradient-primary text-primary-foreground shadow-soft font-display font-bold text-sm tracking-wider">
+                  {s.n}
+                </div>
+                <h3 className="font-display text-xl mb-2 font-semibold">{s.t}</h3>
+                <p className="text-muted-foreground leading-relaxed text-sm">{s.d}</p>
               </motion.div>
             ))}
           </div>
