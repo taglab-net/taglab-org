@@ -1,11 +1,8 @@
 import { createFileRoute } from "@tanstack/react-router";
 
 import { motion } from "framer-motion";
-import heroHands from "@/assets/hero-hands.jpg";
 import impactField from "@/assets/impact-field.jpg";
-
-
-import vizAnalytics from "@/assets/viz-analytics.jpg";
+import { Button } from "@/components/ui/button";
 
 
 export const Route = createFileRoute("/")({
@@ -32,90 +29,75 @@ function Landing() {
   return (
     <div className="min-h-screen bg-background text-foreground">
       {/* NAV */}
-      <header className="sticky top-0 z-50 backdrop-blur-md bg-background/80 border-b border-border/60">
+      <header className="sticky top-0 z-50 backdrop-blur-md bg-background/85 border-b border-border/60">
         <nav className="max-w-7xl mx-auto px-6 lg:px-10 h-16 flex items-center justify-between">
-          <a href="#top" className="flex items-center gap-2 font-display text-xl font-semibold tracking-tight">
-            <span className="inline-block w-2 h-2 rounded-full bg-accent" />
+          <a href="#top" className="flex items-center gap-2 font-display text-xl font-bold tracking-tight">
+            <span className="inline-block w-2.5 h-2.5 rounded-full bg-gradient-primary" />
             taglab<span className="text-primary">studio</span>
           </a>
-          <div className="hidden md:flex items-center gap-8 text-sm text-muted-foreground">
-            <a href="#services" className="hover:text-foreground transition">Services</a>
-            <a href="#capabilities" className="hover:text-foreground transition">In practice</a>
-            <a href="#approach" className="hover:text-foreground transition">Approach</a>
-            <a href="#impact" className="hover:text-foreground transition">Impact</a>
-            <a href="#contact" className="hover:text-foreground transition">Contact</a>
+          <div className="hidden md:flex items-center gap-8 text-sm font-medium text-foreground/75">
+            <a href="#services" className="hover:text-primary transition">Services</a>
+            <a href="#capabilities" className="hover:text-primary transition">In practice</a>
+            <a href="#approach" className="hover:text-primary transition">Approach</a>
+            <a href="#impact" className="hover:text-primary transition">Impact</a>
+            <a href="#contact" className="hover:text-primary transition">Contact</a>
           </div>
-          <a href="#contact" className="inline-flex items-center gap-2 rounded-full bg-primary text-primary-foreground px-5 py-2 text-sm font-medium hover:bg-primary/90 transition shadow-soft">
-            Start a conversation
-          </a>
+          <Button asChild variant="default" size="lg">
+            <a href="#contact">Start a conversation</a>
+          </Button>
         </nav>
       </header>
 
       {/* HERO */}
-      <section id="top" className="relative overflow-hidden">
-        <div className="max-w-7xl mx-auto px-6 lg:px-10 pt-16 lg:pt-24 pb-20 lg:pb-32 grid lg:grid-cols-12 gap-10 items-center">
+      <section
+        id="top"
+        className="relative isolate overflow-hidden bg-gradient-hero"
+      >
+        {/* glow accents */}
+        <div aria-hidden className="absolute -top-40 -left-40 w-[520px] h-[520px] rounded-full bg-[var(--primary-glow)]/15 blur-3xl" />
+        <div aria-hidden className="absolute top-20 -right-32 w-[420px] h-[420px] rounded-full bg-accent/10 blur-3xl" />
+
+        <div className="relative max-w-6xl mx-auto px-6 lg:px-10 pt-24 lg:pt-32 pb-24 lg:pb-36 text-center">
           <motion.div
             initial={{ opacity: 0, y: 24 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
-            className="lg:col-span-7"
           >
-            <div className="inline-flex items-center gap-2 text-xs uppercase tracking-[0.22em] text-muted-foreground mb-6">
-              <span className="w-8 h-px bg-accent" />
-              A digital studio for nonprofits
-            </div>
-            <h1 className="font-display text-5xl md:text-6xl lg:text-7xl leading-[0.98] text-balance">
-              Donors don't give to <em className="italic text-accent">organizations.</em>
+            <span className="inline-block rounded-full border border-white/20 bg-white/10 px-4 py-1.5 text-[11px] font-medium tracking-[0.2em] text-white/90 uppercase backdrop-blur-sm">
+              Donor CRM · Campaigns · Storytelling · Stewardship
+            </span>
+            <h1 className="mt-7 font-display text-4xl md:text-6xl lg:text-7xl leading-[1.02] text-white text-balance">
+              Donors don't give to organizations.
               <br />
-              They give to <span className="text-primary">people they trust.</span>
+              They give to{" "}
+              <span className="bg-gradient-to-r from-[oklch(0.85_0.18_145)] to-[oklch(0.72_0.18_145)] bg-clip-text text-transparent">
+                people they trust.
+              </span>
             </h1>
-            <p className="mt-8 text-lg md:text-xl text-muted-foreground max-w-xl leading-relaxed">
+            <p className="mx-auto mt-7 max-w-2xl text-lg md:text-xl text-white/80 leading-relaxed">
               Taglab Studio helps mission-driven teams build donor relationships that last —
               through thoughtful communication, clean CRM, and stories that prove impact.
             </p>
-            <div className="mt-10 flex flex-wrap items-center gap-4">
-              <a href="#contact" className="inline-flex items-center gap-2 rounded-full bg-primary text-primary-foreground px-7 py-3.5 font-medium hover:bg-primary/90 transition shadow-lift">
-                Book a discovery call
-                <span aria-hidden>→</span>
-              </a>
-              <a href="#services" className="inline-flex items-center gap-2 rounded-full border border-border px-7 py-3.5 font-medium hover:bg-secondary transition">
-                See what we do
-              </a>
+            <div className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4">
+              <Button asChild variant="hero" size="xl">
+                <a href="#contact">Book a discovery call →</a>
+              </Button>
+              <Button asChild variant="heroOutline" size="xl">
+                <a href="#services">See what we do</a>
+              </Button>
             </div>
-            <div className="mt-12 grid grid-cols-3 gap-6 max-w-md">
+
+            <div className="mt-14 grid grid-cols-3 gap-6 max-w-2xl mx-auto">
               {[
                 { k: "62%", v: "avg. donor retention lift" },
                 { k: "3.4×", v: "email revenue growth" },
                 { k: "+22%", v: "avg. gift value uplift" },
               ].map((s) => (
-                <div key={s.k}>
-                  <div className="font-display text-3xl text-primary">{s.k}</div>
-                  <div className="text-xs text-muted-foreground mt-1 leading-snug">{s.v}</div>
+                <div key={s.k} className="text-center">
+                  <div className="font-display text-3xl md:text-4xl font-bold bg-gradient-to-r from-[oklch(0.85_0.18_145)] to-[oklch(0.72_0.18_145)] bg-clip-text text-transparent">{s.k}</div>
+                  <div className="text-xs md:text-sm text-white/65 mt-2 leading-snug">{s.v}</div>
                 </div>
               ))}
-            </div>
-          </motion.div>
-
-          <motion.div
-            initial={{ opacity: 0, scale: 0.96 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 1, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
-            className="lg:col-span-5 relative"
-          >
-            <div className="relative rounded-2xl overflow-hidden shadow-lift">
-              <img
-                src={heroHands}
-                alt="Hands joined together in a community gathering at golden hour"
-                width={1600}
-                height={1200}
-                className="w-full h-[520px] object-cover"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-primary/30 to-transparent" />
-            </div>
-            <div className="absolute -bottom-6 -left-6 bg-card rounded-xl p-5 shadow-lift max-w-[240px] border border-border hidden md:block">
-              <div className="text-xs uppercase tracking-wider text-muted-foreground mb-1">This quarter</div>
-              <div className="font-display text-2xl">$1.2M raised</div>
-              <div className="text-sm text-muted-foreground mt-1">across 12 campaigns we ran with partners</div>
             </div>
           </motion.div>
         </div>
@@ -137,7 +119,7 @@ function Landing() {
             </div>
           </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-px bg-border rounded-2xl overflow-hidden border border-border">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             {services.map((s, i) => (
               <motion.div
                 key={s.n}
@@ -145,11 +127,13 @@ function Landing() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: "-60px" }}
                 transition={{ duration: 0.5, delay: (i % 3) * 0.08 }}
-                className="bg-card p-8 lg:p-10 group hover:bg-secondary/60 transition-colors"
+                className="group rounded-3xl border border-border bg-card p-8 lg:p-9 shadow-card transition-all hover:-translate-y-1 hover:shadow-elegant hover:border-primary/30"
               >
-                <div className="font-display text-sm text-accent mb-6 tracking-widest">{s.n}</div>
-                <h3 className="font-display text-2xl mb-3">{s.t}</h3>
-                <p className="text-muted-foreground leading-relaxed">{s.d}</p>
+                <div className="mb-5 inline-flex h-12 w-12 items-center justify-center rounded-2xl bg-gradient-primary text-primary-foreground shadow-soft font-display font-bold text-sm tracking-wider">
+                  {s.n}
+                </div>
+                <h3 className="font-display text-xl mb-2 font-semibold">{s.t}</h3>
+                <p className="text-muted-foreground leading-relaxed text-sm">{s.d}</p>
               </motion.div>
             ))}
           </div>
@@ -545,7 +529,8 @@ function Landing() {
       </section>
 
 
-      <section id="approach" className="bg-primary text-primary-foreground py-24 lg:py-32">
+      <section id="approach" className="bg-gradient-hero text-white py-24 lg:py-32 relative overflow-hidden">
+        <div aria-hidden className="absolute -top-32 right-0 w-[500px] h-[500px] rounded-full bg-[var(--primary-glow)]/15 blur-3xl" />
         <div className="max-w-7xl mx-auto px-6 lg:px-10 grid lg:grid-cols-12 gap-12 items-center">
           <div className="lg:col-span-5 order-2 lg:order-1">
             <div className="rounded-2xl overflow-hidden shadow-lift bg-background text-foreground p-6 lg:p-7 relative">
@@ -629,7 +614,7 @@ function Landing() {
             <h2 className="font-display text-4xl md:text-5xl leading-[1.05] mb-8 text-balance">
               We treat every donor like the person they are.
             </h2>
-            <div className="space-y-6 text-primary-foreground/85 text-lg leading-relaxed">
+            <div className="space-y-6 text-white/85 text-lg leading-relaxed">
               <p>
                 Most nonprofit marketing reads like a bank statement. We think that's a missed
                 opportunity. Your donors gave because they believed. Our job is to keep that
@@ -644,7 +629,7 @@ function Landing() {
                 We know the nonprofit ecosystem from the inside: tight budgets, lean teams,
                 board reporting, restricted funds, grant cycles. That context shapes how we
                 price and how we work. By running a focused, remote-first studio, our
-                operating costs sit roughly <span className="text-foreground font-medium">60% below a typical for-profit agency</span> —
+                operating costs sit roughly <span className="text-white font-semibold">60% below a typical for-profit agency</span> —
                 and we pass that difference straight back to you, so more of every dollar
                 reaches the mission.
               </p>
