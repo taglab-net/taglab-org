@@ -1,6 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
 
-import { motion } from "framer-motion";
 import impactField from "@/assets/impact-field.jpg";
 import { Button } from "@/components/ui/button";
 
@@ -58,10 +57,7 @@ function Landing() {
         <div aria-hidden className="absolute top-20 -right-32 w-[420px] h-[420px] rounded-full bg-accent/10 blur-3xl" />
 
         <div className="relative max-w-6xl mx-auto px-6 lg:px-10 pt-24 lg:pt-32 pb-24 lg:pb-36 text-center">
-          <motion.div
-            initial={{ opacity: 0, y: 24 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
+          <div
           >
             <span className="inline-block rounded-full border border-white/20 bg-white/10 px-4 py-1.5 text-[11px] font-medium tracking-[0.2em] text-white/90 uppercase backdrop-blur-sm">
               Donor CRM · Campaigns · Storytelling · Stewardship
@@ -99,7 +95,7 @@ function Landing() {
                 </div>
               ))}
             </div>
-          </motion.div>
+          </div>
         </div>
       </section>
 
@@ -121,12 +117,8 @@ function Landing() {
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             {services.map((s, i) => (
-              <motion.div
+              <div
                 key={s.n}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, margin: "-60px" }}
-                transition={{ duration: 0.5, delay: (i % 3) * 0.08 }}
                 className="group rounded-3xl border border-border bg-card p-8 lg:p-9 shadow-card transition-all hover:-translate-y-1 hover:shadow-elegant hover:border-primary/30"
               >
                 <div className="mb-5 inline-flex h-12 w-12 items-center justify-center rounded-2xl bg-gradient-primary text-primary-foreground shadow-soft font-display font-bold text-sm tracking-wider">
@@ -134,7 +126,7 @@ function Landing() {
                 </div>
                 <h3 className="font-display text-xl mb-2 font-semibold">{s.t}</h3>
                 <p className="text-muted-foreground leading-relaxed text-sm">{s.d}</p>
-              </motion.div>
+              </div>
             ))}
           </div>
         </div>
@@ -157,11 +149,7 @@ function Landing() {
 
           <div className="grid md:grid-cols-2 gap-6 lg:gap-8">
             {/* CRM Workflow + Email */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-60px" }}
-              transition={{ duration: 0.6 }}
+            <div
               className="bg-card rounded-2xl overflow-hidden border border-border shadow-soft group"
             >
               <div className="aspect-[4/3] bg-primary p-5 lg:p-6 flex flex-col relative overflow-hidden">
@@ -239,14 +227,10 @@ function Landing() {
                   CRM with on-brand email templates ready to send.
                 </p>
               </div>
-            </motion.div>
+            </div>
 
             {/* Donation campaign + form — built as real UI */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-60px" }}
-              transition={{ duration: 0.6, delay: 0.08 }}
+            <div
               className="bg-card rounded-2xl overflow-hidden border border-border shadow-soft"
             >
               <div className="aspect-[4/3] bg-gradient-warm p-6 lg:p-8 flex items-center justify-center">
@@ -289,14 +273,10 @@ function Landing() {
                   saying yes the easiest thing a donor does all week.
                 </p>
               </div>
-            </motion.div>
+            </div>
 
             {/* Impact stories + annual report */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-60px" }}
-              transition={{ duration: 0.6, delay: 0.16 }}
+            <div
               className="bg-card rounded-2xl overflow-hidden border border-border shadow-soft group"
             >
               <div className="aspect-[4/3] bg-gradient-warm p-6 lg:p-8 flex items-center justify-center gap-4 lg:gap-5 relative overflow-hidden">
@@ -361,14 +341,10 @@ function Landing() {
                   narrative — the kind donors forward, save, and screenshot.
                 </p>
               </div>
-            </motion.div>
+            </div>
 
             {/* Analytics dashboard — built as real UI */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-60px" }}
-              transition={{ duration: 0.6, delay: 0.24 }}
+            <div
               className="bg-card rounded-2xl overflow-hidden border border-border shadow-soft"
             >
               <div className="aspect-[4/3] bg-primary p-4 lg:p-5 flex items-center justify-center overflow-hidden">
@@ -523,7 +499,7 @@ function Landing() {
                   your board understands and your team trusts.
                 </p>
               </div>
-            </motion.div>
+            </div>
           </div>
         </div>
       </section>
@@ -664,11 +640,7 @@ function Landing() {
           </div>
 
           <div className="grid lg:grid-cols-2 gap-8">
-            <motion.article
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6 }}
+            <article
               className="bg-card rounded-2xl overflow-hidden border border-border shadow-soft"
             >
               <img
@@ -690,13 +662,9 @@ function Landing() {
                   targeted email marketing and social media advertising.
                 </p>
               </div>
-            </motion.article>
+            </article>
 
-            <motion.article
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: 0.1 }}
+            <article
               className="bg-gradient-hero text-primary-foreground rounded-2xl p-10 lg:p-12 flex flex-col justify-between min-h-[440px] shadow-lift"
             >
               <div>
@@ -716,7 +684,7 @@ function Landing() {
                   Year-two annual online revenue · full-stack engagement
                 </div>
               </div>
-            </motion.article>
+            </article>
           </div>
         </div>
       </section>
