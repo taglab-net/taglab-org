@@ -1,6 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 
 import impactField from "@/assets/impact-field.jpg";
+import impactRevenue from "@/assets/impact-revenue.jpg";
 import { Button } from "@/components/ui/button";
 
 
@@ -62,12 +63,13 @@ function Landing() {
             <span className="inline-block rounded-full border border-white/20 bg-white/10 px-4 py-1.5 text-[11px] font-medium tracking-[0.2em] text-white/90 uppercase backdrop-blur-sm">
               Donor CRM · Campaigns · Storytelling · Stewardship
             </span>
-            <h1 className="mt-7 font-display text-4xl md:text-6xl lg:text-7xl leading-[1.02] text-white text-balance">
-              Donors don't give to organizations.
-              <br />
-              They give to{" "}
+            <p className="mt-7 text-sm md:text-base font-medium tracking-wide text-white/75">
+              — A digital studio for nonprofits
+            </p>
+            <h1 className="mt-3 font-display text-4xl md:text-6xl lg:text-7xl leading-[1.02] text-white text-balance">
+              Nonprofit{" "}
               <span className="bg-gradient-to-r from-[oklch(0.85_0.18_145)] to-[oklch(0.72_0.18_145)] bg-clip-text text-transparent">
-                people they trust.
+                Revenue Acceleration
               </span>
             </h1>
             <p className="mx-auto mt-7 max-w-2xl text-lg md:text-xl text-white/80 leading-relaxed">
@@ -76,7 +78,7 @@ function Landing() {
             </p>
             <div className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4">
               <Button asChild variant="hero" size="xl">
-                <a href="#contact">Book a discovery call →</a>
+                <a href="http://taglab.net/contact-us" target="_blank" rel="noopener noreferrer">Book a strategy call →</a>
               </Button>
               <Button asChild variant="heroOutline" size="xl">
                 <a href="#services">See what we do</a>
@@ -665,23 +667,33 @@ function Landing() {
             </article>
 
             <article
-              className="bg-gradient-hero text-primary-foreground rounded-2xl p-10 lg:p-12 flex flex-col justify-between min-h-[440px] shadow-lift"
+              className="bg-gradient-hero text-primary-foreground rounded-2xl overflow-hidden flex flex-col min-h-[440px] shadow-lift"
             >
-              <div>
-                <div className="text-xs uppercase tracking-widest text-accent mb-3">Middle East humanitarian NGO</div>
-                <h3 className="font-display text-3xl lg:text-4xl mb-4 text-balance">
-                  <span className="text-accent">+$8M</span> in annual online revenue by year two — addressing the consequences of a devastating war.
-                </h3>
-                <p className="text-primary-foreground/80 leading-relaxed">
-                  A full marketing-stack framework spanning innovative program fundraising
-                  campaigns, organic SEO, digital advertising, CRM, and continuous content
-                  updates.
-                </p>
-              </div>
-              <div>
-                <div className="h-px bg-primary-foreground/20 mb-4" />
-                <div className="text-sm text-primary-foreground/80">
-                  Year-two annual online revenue · full-stack engagement
+              <img
+                src={impactRevenue}
+                alt="Humanitarian aid workers distributing supplies to families"
+                width={1280}
+                height={896}
+                loading="lazy"
+                className="w-full h-72 object-cover"
+              />
+              <div className="p-10 lg:p-12 flex flex-col justify-between flex-1">
+                <div>
+                  <div className="text-xs uppercase tracking-widest text-accent mb-3">Middle East humanitarian NGO</div>
+                  <h3 className="font-display text-3xl lg:text-4xl mb-4 text-balance">
+                    <span className="text-accent">+$8M</span> in annual online revenue by year two — addressing the consequences of a devastating war.
+                  </h3>
+                  <p className="text-primary-foreground/80 leading-relaxed">
+                    A full marketing-stack framework spanning innovative program fundraising
+                    campaigns, organic SEO, digital advertising, CRM, and continuous content
+                    updates.
+                  </p>
+                </div>
+                <div className="mt-6">
+                  <div className="h-px bg-primary-foreground/20 mb-4" />
+                  <div className="text-sm text-primary-foreground/80">
+                    Year-two annual online revenue · full-stack engagement
+                  </div>
                 </div>
               </div>
             </article>
@@ -697,15 +709,17 @@ function Landing() {
             Your mission deserves a marketing partner who <em className="italic text-accent">actually gets it.</em>
           </h2>
           <p className="text-lg md:text-xl text-muted-foreground mb-10 max-w-2xl mx-auto leading-relaxed">
-            Book a 30-minute discovery call. No pitch deck, no pressure — just a real
+            Book a 30-minute strategy call. No pitch deck, no pressure — just a real
             conversation about your donors and what's next.
           </p>
           <div className="flex flex-wrap justify-center gap-4">
             <a
-              href="mailto:hello@taglabstudio.org"
+              href="http://taglab.net/contact-us"
+              target="_blank"
+              rel="noopener noreferrer"
               className="inline-flex items-center gap-2 rounded-full bg-primary text-primary-foreground px-8 py-4 font-medium hover:bg-primary/90 transition shadow-lift"
             >
-              hello@taglabstudio.org
+              Book a strategy call
               <span aria-hidden>→</span>
             </a>
             <a
@@ -720,20 +734,22 @@ function Landing() {
 
       {/* FOOTER */}
       <footer className="border-t border-border bg-card">
-        <div className="max-w-7xl mx-auto px-6 lg:px-10 py-12 flex flex-col md:flex-row gap-6 items-start md:items-center justify-between">
-          <div>
-            <div className="font-display text-xl font-semibold flex items-center gap-2">
-              <span className="inline-block w-2 h-2 rounded-full bg-accent" />
+        <div className="max-w-7xl mx-auto px-6 lg:px-10 py-8 flex flex-col md:flex-row gap-3 md:gap-6 items-start md:items-center justify-between">
+          <div className="flex items-center gap-4">
+            <div className="font-display text-xl font-bold flex items-center gap-2">
+              <span className="inline-block w-2 h-2 rounded-full bg-primary" />
               taglab<span className="text-primary">studio</span>
-              <span className="text-sm font-normal text-muted-foreground ml-1">(a Taglab agency)</span>
             </div>
-            <div className="text-sm text-muted-foreground mt-2">
-              Digital marketing, built for nonprofits.
-            </div>
+            <span className="text-sm text-muted-foreground">Non-profit accelerator</span>
           </div>
-          <div className="text-sm text-muted-foreground">
-            © {new Date().getFullYear()} Taglab Studio · taglabstudio.org
-          </div>
+          <a
+            href="http://taglab.net"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-sm font-medium text-primary hover:underline"
+          >
+            taglab.net →
+          </a>
         </div>
       </footer>
     </div>
