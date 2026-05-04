@@ -712,12 +712,18 @@ function Landing() {
             Book a 30-minute discovery call. No pitch deck, no pressure — just a real
             conversation about your donors and what's next.
           </p>
+          <p className="text-lg md:text-xl text-muted-foreground mb-10 max-w-2xl mx-auto leading-relaxed">
+            Book a 30-minute strategy call. No pitch deck, no pressure — just a real
+            conversation about your donors and what's next.
+          </p>
           <div className="flex flex-wrap justify-center gap-4">
             <a
-              href="mailto:hello@taglabstudio.org"
+              href="http://taglab.net/contact-us"
+              target="_blank"
+              rel="noopener noreferrer"
               className="inline-flex items-center gap-2 rounded-full bg-primary text-primary-foreground px-8 py-4 font-medium hover:bg-primary/90 transition shadow-lift"
             >
-              hello@taglabstudio.org
+              Book a strategy call
               <span aria-hidden>→</span>
             </a>
             <a
