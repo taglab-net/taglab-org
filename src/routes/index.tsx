@@ -1,6 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 
 import impactField from "@/assets/impact-field.jpg";
+import impactRevenue from "@/assets/impact-revenue.jpg";
 import { Button } from "@/components/ui/button";
 
 
