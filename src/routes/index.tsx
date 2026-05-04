@@ -734,20 +734,22 @@ function Landing() {
 
       {/* FOOTER */}
       <footer className="border-t border-border bg-card">
-        <div className="max-w-7xl mx-auto px-6 lg:px-10 py-12 flex flex-col md:flex-row gap-6 items-start md:items-center justify-between">
-          <div>
-            <div className="font-display text-xl font-semibold flex items-center gap-2">
-              <span className="inline-block w-2 h-2 rounded-full bg-accent" />
+        <div className="max-w-7xl mx-auto px-6 lg:px-10 py-8 flex flex-col md:flex-row gap-3 md:gap-6 items-start md:items-center justify-between">
+          <div className="flex items-center gap-4">
+            <div className="font-display text-xl font-bold flex items-center gap-2">
+              <span className="inline-block w-2 h-2 rounded-full bg-primary" />
               taglab<span className="text-primary">studio</span>
-              <span className="text-sm font-normal text-muted-foreground ml-1">(a Taglab agency)</span>
             </div>
-            <div className="text-sm text-muted-foreground mt-2">
-              Digital marketing, built for nonprofits.
-            </div>
+            <span className="text-sm text-muted-foreground">Non-profit accelerator</span>
           </div>
-          <div className="text-sm text-muted-foreground">
-            © {new Date().getFullYear()} Taglab Studio · taglabstudio.org
-          </div>
+          <a
+            href="http://taglab.net"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-sm font-medium text-primary hover:underline"
+          >
+            taglab.net →
+          </a>
         </div>
       </footer>
     </div>
