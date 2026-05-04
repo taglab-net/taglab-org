@@ -709,10 +709,6 @@ function Landing() {
             Your mission deserves a marketing partner who <em className="italic text-accent">actually gets it.</em>
           </h2>
           <p className="text-lg md:text-xl text-muted-foreground mb-10 max-w-2xl mx-auto leading-relaxed">
-            Book a 30-minute discovery call. No pitch deck, no pressure — just a real
-            conversation about your donors and what's next.
-          </p>
-          <p className="text-lg md:text-xl text-muted-foreground mb-10 max-w-2xl mx-auto leading-relaxed">
             Book a 30-minute strategy call. No pitch deck, no pressure — just a real
             conversation about your donors and what's next.
           </p>
