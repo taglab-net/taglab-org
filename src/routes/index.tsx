@@ -63,12 +63,13 @@ function Landing() {
             <span className="inline-block rounded-full border border-white/20 bg-white/10 px-4 py-1.5 text-[11px] font-medium tracking-[0.2em] text-white/90 uppercase backdrop-blur-sm">
               Donor CRM · Campaigns · Storytelling · Stewardship
             </span>
-            <h1 className="mt-7 font-display text-4xl md:text-6xl lg:text-7xl leading-[1.02] text-white text-balance">
-              Donors don't give to organizations.
-              <br />
-              They give to{" "}
+            <p className="mt-7 text-sm md:text-base font-medium tracking-wide text-white/75">
+              — A digital studio for nonprofits
+            </p>
+            <h1 className="mt-3 font-display text-4xl md:text-6xl lg:text-7xl leading-[1.02] text-white text-balance">
+              Nonprofit{" "}
               <span className="bg-gradient-to-r from-[oklch(0.85_0.18_145)] to-[oklch(0.72_0.18_145)] bg-clip-text text-transparent">
-                people they trust.
+                Revenue Acceleration
               </span>
             </h1>
             <p className="mx-auto mt-7 max-w-2xl text-lg md:text-xl text-white/80 leading-relaxed">
@@ -77,7 +78,7 @@ function Landing() {
             </p>
             <div className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4">
               <Button asChild variant="hero" size="xl">
-                <a href="#contact">Book a discovery call →</a>
+                <a href="http://taglab.net/contact-us" target="_blank" rel="noopener noreferrer">Book a strategy call →</a>
               </Button>
               <Button asChild variant="heroOutline" size="xl">
                 <a href="#services">See what we do</a>
