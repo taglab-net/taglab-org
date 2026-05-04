@@ -667,23 +667,33 @@ function Landing() {
             </article>
 
             <article
-              className="bg-gradient-hero text-primary-foreground rounded-2xl p-10 lg:p-12 flex flex-col justify-between min-h-[440px] shadow-lift"
+              className="bg-gradient-hero text-primary-foreground rounded-2xl overflow-hidden flex flex-col min-h-[440px] shadow-lift"
             >
-              <div>
-                <div className="text-xs uppercase tracking-widest text-accent mb-3">Middle East humanitarian NGO</div>
-                <h3 className="font-display text-3xl lg:text-4xl mb-4 text-balance">
-                  <span className="text-accent">+$8M</span> in annual online revenue by year two — addressing the consequences of a devastating war.
-                </h3>
-                <p className="text-primary-foreground/80 leading-relaxed">
-                  A full marketing-stack framework spanning innovative program fundraising
-                  campaigns, organic SEO, digital advertising, CRM, and continuous content
-                  updates.
-                </p>
-              </div>
-              <div>
-                <div className="h-px bg-primary-foreground/20 mb-4" />
-                <div className="text-sm text-primary-foreground/80">
-                  Year-two annual online revenue · full-stack engagement
+              <img
+                src={impactRevenue}
+                alt="Humanitarian aid workers distributing supplies to families"
+                width={1280}
+                height={896}
+                loading="lazy"
+                className="w-full h-72 object-cover"
+              />
+              <div className="p-10 lg:p-12 flex flex-col justify-between flex-1">
+                <div>
+                  <div className="text-xs uppercase tracking-widest text-accent mb-3">Middle East humanitarian NGO</div>
+                  <h3 className="font-display text-3xl lg:text-4xl mb-4 text-balance">
+                    <span className="text-accent">+$8M</span> in annual online revenue by year two — addressing the consequences of a devastating war.
+                  </h3>
+                  <p className="text-primary-foreground/80 leading-relaxed">
+                    A full marketing-stack framework spanning innovative program fundraising
+                    campaigns, organic SEO, digital advertising, CRM, and continuous content
+                    updates.
+                  </p>
+                </div>
+                <div className="mt-6">
+                  <div className="h-px bg-primary-foreground/20 mb-4" />
+                  <div className="text-sm text-primary-foreground/80">
+                    Year-two annual online revenue · full-stack engagement
+                  </div>
                 </div>
               </div>
             </article>
